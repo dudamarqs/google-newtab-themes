@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic New Tab — Temas para o Google Chrome</title>
+  <meta name="description" content="Pacote de temas animados de nova guia para o Google Chrome. Desenvolvido por Maria Eduarda Marques." />
+  <meta name="author" content="Maria Eduarda Marques" />
+  <meta property="og:title" content="Dynamic New Tab — Temas para o Chrome" />
+  <meta property="og:description" content="5 temas animados de nova guia para o Google Chrome. Por Maria Eduarda Marques." />
+  <meta property="og:image" content="https://dudamarqs.github.io/google-newtab-themes/screenshots/live-machine-rose.jpeg" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>" />
+  <style>
+    :root {
+      --bg: #0b0810; --bg2: #140b1a; --card: rgba(255,255,255,.04);
+      --line: rgba(255,255,255,.10); --text: #ece7f0; --muted: #a99fb3;
+      --pink: #ff6fb0; --purple: #a78bfa; --cyan: #4fd0e0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(900px 600px at 15% -5%, rgba(255,111,176,.16), transparent 60%),
+        radial-gradient(900px 600px at 90% 0%, rgba(79,208,224,.14), transparent 60%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
+      color: var(--text);
+      font-family: "Segoe UI", system-ui, Roboto, Arial, sans-serif;
+      line-height: 1.6; min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 22px; }
+
+    /* topo */
+    header.hero { text-align: center; padding: 84px 0 54px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font: 600 13px/1 "Consolas", monospace; letter-spacing: .5px;
+      color: var(--muted); border: 1px solid var(--line); border-radius: 999px;
+      padding: 8px 14px; margin-bottom: 22px; text-decoration: none;
+      transition: border-color .2s, color .2s;
+    }
+    .badge:hover { border-color: var(--pink); color: #fff; }
+    .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 8px var(--pink); }
+    h1 {
+      font-size: clamp(38px, 7vw, 76px); font-weight: 800; letter-spacing: -2px; line-height: 1.02;
+      background: linear-gradient(100deg, #fff 10%, var(--pink) 45%, var(--purple) 70%, var(--cyan) 95%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .sub { color: var(--muted); font-size: clamp(15px, 2.4vw, 19px); max-width: 640px; margin: 18px auto 0; }
+    .cta { margin-top: 30px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px; text-decoration: none;
+      padding: 12px 20px; border-radius: 11px; font-weight: 600; font-size: 15px;
+      border: 1px solid var(--line); color: var(--text); transition: transform .15s, box-shadow .2s, border-color .2s, background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary { background: linear-gradient(100deg, var(--pink), var(--purple)); border-color: transparent; color: #170a12; }
+    .btn.primary:hover { box-shadow: 0 10px 30px rgba(167,139,250,.35); }
+    .btn.ghost:hover { border-color: var(--purple); box-shadow: 0 8px 24px rgba(167,139,250,.2); }
+    .author { margin-top: 26px; font-size: 14px; color: var(--muted); }
+    .author a { color: var(--purple); text-decoration: none; font-weight: 600; }
+    .author a:hover { text-decoration: underline; }
+
+    /* seção */
+    .section { padding: 40px 0; }
+    .section h2 { font-size: 26px; letter-spacing: -.5px; margin-bottom: 6px; }
+    .section .lead { color: var(--muted); margin-bottom: 26px; }
+
+    /* passos */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+    .step { border: 1px solid var(--line); border-radius: 14px; padding: 18px; background: var(--card); }
+    .step .n { font: 700 13px "Consolas", monospace; color: var(--cyan); }
+    .step h3 { font-size: 16px; margin: 6px 0 4px; }
+    .step p { color: var(--muted); font-size: 14px; }
+
+    /* galeria */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 22px; }
+    .card {
+      border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--card);
+      display: flex; flex-direction: column; transition: transform .18s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 16px 44px rgba(0,0,0,.4); }
+    .card .shot { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; border-bottom: 1px solid var(--line); background: #000; }
+    .card .body { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .card h3 { font-size: 19px; display: flex; align-items: center; gap: 9px; }
+    .card h3::before { content: ""; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+    .card p { color: var(--muted); font-size: 14px; flex: 1; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font: 600 11px "Consolas", monospace; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px; }
+    .card .links { display: flex; gap: 10px; margin-top: 6px; }
+    .card .links a { flex: 1; text-align: center; text-decoration: none; font-size: 13px; font-weight: 600; padding: 9px 12px; border-radius: 9px; border: 1px solid var(--line); transition: background .2s, border-color .2s; }
+    .card .links a:hover { border-color: var(--accent); background: rgba(255,255,255,.05); }
+
+    /* rodapé */
+    footer { border-top: 1px solid var(--line); margin-top: 50px; padding: 40px 0 60px; text-align: center; color: var(--muted); }
+    footer .credit { font-size: 16px; color: var(--text); }
+    footer .credit a { color: var(--pink); text-decoration: none; font-weight: 700; }
+    footer .credit a:hover { text-decoration: underline; }
+    footer .small { margin-top: 8px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <a class="badge" href="https://github.com/dudamarqs" target="_blank" rel="noopener">
+        <span class="dot"></span> desenvolvido por Maria Eduarda Marques
+      </a>
+      <h1>Dynamic New Tab</h1>
+      <p class="sub">Temas animados de nova guia para o Google Chrome. Cada tema transforma a página
+        inicial, estiliza a busca do Google e traz um tema combinando para a interface do navegador.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/dudamarqs/google-newtab-themes" target="_blank" rel="noopener">★ Ver no GitHub</a>
+        <a class="btn ghost" href="https://github.com/dudamarqs/google-newtab-themes/archive/refs/heads/main.zip">⬇ Baixar o pacote (ZIP)</a>
+      </div>
+      <p class="author">Feito à mão em HTML, CSS e JavaScript — sem dependências e sem coleta de dados.</p>
+    </div>
+  </header>
+
+  <section class="section" id="temas">
+    <div class="wrap">
+      <h2>Os temas</h2>
+      <p class="lead">5 estilos, cada um com sua própria cena animada.</p>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="instalar">
+    <div class="wrap">
+      <h2>Como instalar</h2>
+      <p class="lead">Grátis, em minutos — direto pelo Chrome (modo desenvolvedor).</p>
+      <div class="steps">
+        <div class="step"><div class="n">01</div><h3>Baixe o pacote</h3><p>Clique em "Baixar o pacote (ZIP)" e extraia a pasta.</p></div>
+        <div class="step"><div class="n">02</div><h3>Abra as extensões</h3><p>Vá em <code>chrome://extensions</code> e ative o <b>Modo do desenvolvedor</b>.</p></div>
+        <div class="step"><div class="n">03</div><h3>Carregue o tema</h3><p>Clique em <b>Carregar sem compactação</b> e selecione a pasta do tema (ex.: <code>pink-code</code>) e a do tema de UI (<code>pink-code-theme</code>).</p></div>
+        <div class="step"><div class="n">04</div><h3>Abra uma nova guia</h3><p>Pronto! Para trocar de tema, ative outro par e desative o anterior.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p class="credit">Desenvolvido por <a href="https://github.com/dudamarqs" target="_blank" rel="noopener">Maria Eduarda Marques</a></p>
+      <p class="small">© 2026 · Licença MIT · <a href="https://github.com/dudamarqs/google-newtab-themes" target="_blank" rel="noopener" style="color:var(--muted)">github.com/dudamarqs/google-newtab-themes</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const REPO = "https://github.com/dudamarqs/google-newtab-themes/tree/main/";
+    const themes = [
+      { slug: "pink-code", name: "Pink Code", accent: "#ff6fb0",
+        img: "screenshots/pink-code.jpeg",
+        desc: "Estética synthwave rosa: chuva de código caindo, grade neon em perspectiva e barra de busca com brilho neon.",
+        tags: ["synthwave", "rosa", "código"] },
+      { slug: "purple-wave", name: "Purple Wave", accent: "#a78bfa",
+        img: "screenshots/purple-wave.jpeg",
+        desc: "Dark roxo elegante com um orbe luminoso e ondas de luz em movimento lento pela tela.",
+        tags: ["roxo", "ondas", "orbe"] },
+      { slug: "pixel-runner", name: "Pixel Runner", accent: "#66e6ff",
+        img: "screenshots/pixel-runner.jpeg",
+        desc: "Um robô em pixel art corre sobre a barra de pesquisa, pula obstáculos, coleta cubos e sai de um portal ao abrir a aba.",
+        tags: ["pixel art", "azul", "jogo"] },
+      { slug: "live-machine", name: "Live Machine", accent: "#4fd0e0",
+        img: "screenshots/live-machine.jpeg",
+        desc: "O Google como um computador vivo: malha de dados até um núcleo, painéis de telemetria e um terminal central.",
+        tags: ["tech", "datacenter", "terminal"] },
+      { slug: "live-machine-rose", name: "Live Machine Rosa", accent: "#ff9ac4",
+        img: "screenshots/live-machine-rose.jpeg",
+        desc: "Variação feminina do Live Machine: fitas de aurora em rosa, lavanda e dourado fluindo suavemente.",
+        tags: ["aurora", "feminino", "rosa"] },
+    ];
+    document.getElementById("grid").innerHTML = themes.map(t => `
+      <article class="card" style="--accent:${t.accent}">
+        <img class="shot" src="${t.img}" alt="Tema ${t.name}" loading="lazy" />
+        <div class="body">
+          <h3>${t.name}</h3>
+          <p>${t.desc}</p>
+          <div class="tags">${t.tags.map(x => `<span class="tag">${x}</span>`).join("")}</div>
+          <div class="links">
+            <a href="${REPO}${t.slug}" target="_blank" rel="noopener">Extensão</a>
+            <a href="${REPO}${t.slug}-theme" target="_blank" rel="noopener">Tema da UI</a>
+          </div>
+        </div>
+      </article>`).join("");
+  </script>
+</body>
+</html>

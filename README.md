@@ -7,6 +7,8 @@ ferramentas, endereço e favoritos).
 
 Tudo em HTML/CSS/JavaScript puro — **sem dependências, sem build, sem coleta de dados**.
 
+🔗 **Site / galeria:** https://dudamarqs.github.io/google-newtab-themes/ · Desenvolvido por **Maria Eduarda Marques** ([@dudamarqs](https://github.com/dudamarqs))
+
 ---
 
 ## ✨ Os temas
