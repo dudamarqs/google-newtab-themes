@@ -24,6 +24,25 @@ Tudo em HTML/CSS/JavaScript puro — **sem dependências, sem build, sem coleta 
 
 ---
 
+## 🖼️ Demonstração
+
+### Pink Code
+![Pink Code](screenshots/pink-code.jpeg)
+
+### Purple Wave
+![Purple Wave](screenshots/purple-wave.jpeg)
+
+### Pixel Runner
+![Pixel Runner](screenshots/pixel-runner.jpeg)
+
+### Live Machine
+![Live Machine](screenshots/live-machine.jpeg)
+
+### Live Machine Rosa
+![Live Machine Rosa](screenshots/live-machine-rose.jpeg)
+
+---
+
 ## 📦 Estrutura
 
 Cada tema tem **duas pastas**:
