@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "name": "Pixel Runner — Tema do Navegador",
+  "description": "Tema dark/azul para a UI do Chrome (abas, barra de ferramentas, endereço e favoritos). Combina com a extensão Pixel Runner — Nova Guia.",
+  "theme": {
+    "colors": {
+      "frame":                    [6, 12, 22],
+      "frame_inactive":           [4, 8, 16],
+      "frame_incognito":          [4, 9, 18],
+      "frame_incognito_inactive": [3, 6, 13],
+
+      "toolbar":                  [12, 22, 36],
+      "toolbar_text":             [230, 238, 246],
+
+      "tab_text":                 [130, 226, 255],
+      "tab_background_text":      [150, 172, 190],
+
+      "omnibox_background":       [10, 18, 30],
+      "omnibox_text":             [230, 238, 246],
+
+      "bookmark_text":            [102, 230, 255],
+
+      "ntp_background":           [4, 6, 12],
+      "ntp_text":                 [230, 238, 246],
+      "ntp_link":                 [102, 230, 255],
+
+      "button_background":        [12, 22, 36]
+    },
+    "tints": {
+      "buttons": [0.52, 0.55, 0.82]
+    },
+    "properties": {
+      "ntp_logo_alternate": 1
+    }
+  }
+}

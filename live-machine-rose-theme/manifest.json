@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "name": "Live Machine Rosa — Tema do Navegador",
+  "description": "Tema rosa/lavanda para a UI do Chrome. Combina com a extensão Live Machine Rosa — Nova Guia.",
+  "theme": {
+    "colors": {
+      "frame":                    [22, 12, 20],
+      "frame_inactive":           [16, 9, 15],
+      "frame_incognito":          [15, 8, 14],
+      "frame_incognito_inactive": [11, 6, 11],
+
+      "toolbar":                  [30, 17, 27],
+      "toolbar_text":             [243, 226, 236],
+
+      "tab_text":                 [255, 194, 221],
+      "tab_background_text":      [183, 154, 172],
+
+      "omnibox_background":       [26, 15, 24],
+      "omnibox_text":             [243, 226, 236],
+
+      "bookmark_text":            [255, 154, 196],
+
+      "ntp_background":           [13, 7, 16],
+      "ntp_text":                 [243, 226, 236],
+      "ntp_link":                 [255, 154, 196],
+
+      "button_background":        [30, 17, 27]
+    },
+    "tints": {
+      "buttons": [0.92, 0.4, 0.82]
+    },
+    "properties": {
+      "ntp_logo_alternate": 1
+    }
+  }
+}

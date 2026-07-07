@@ -1,0 +1,165 @@
+:root {
+  --bg:        #0a0714;
+  --bg2:       #140b26;
+  --purple:    #8b5cf6;
+  --purple2:   #a78bfa;
+  --purple-s:  #c4b5fd;
+  --text:      #ece9f5;
+  --muted:     #b3adc4;
+  --tile:      rgba(30, 24, 46, 0.55);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: radial-gradient(1300px 900px at 88% 96%, #241247 0%, #150a2b 38%, var(--bg) 78%);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, Roboto, Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* ---------- fundo ---------- */
+.bg-glow {
+  position: fixed; inset: 0;
+  background: radial-gradient(680px 520px at 90% 100%, rgba(139,92,246,.22), transparent 68%);
+  pointer-events: none;
+}
+.stars { position: fixed; inset: 0; pointer-events: none; }
+.stars i {
+  position: absolute; width: 2px; height: 2px; border-radius: 50%;
+  background: var(--purple-s); opacity: .5;
+  animation: twinkle var(--tw, 3s) ease-in-out infinite alternate;
+}
+@keyframes twinkle { from { opacity: .1; transform: scale(.6); } to { opacity: .9; transform: scale(1.25); } }
+
+/* ---------- orbe + órbita ---------- */
+.orb-wrap {
+  position: fixed; right: -240px; bottom: -300px;
+  width: 820px; height: 820px; pointer-events: none;
+  animation: floatOrb 12s ease-in-out infinite;
+}
+@keyframes floatOrb { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
+.orb {
+  position: absolute; inset: 0; border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 32%, rgba(180,150,255,.55), rgba(120,80,220,.30) 42%, transparent 70%);
+  box-shadow: inset 40px 30px 90px rgba(190,160,255,.20),
+              inset -40px -30px 120px rgba(20,10,40,.8),
+              0 0 140px rgba(139,92,246,.28);
+}
+.orbit {
+  position: absolute; top: 50%; left: 50%;
+  width: 128%; height: 128%;
+  transform: translate(-50%,-50%) rotate(-18deg);
+  border-radius: 50%;
+  border: 1.5px solid rgba(167,139,250,.5);
+  box-shadow: 0 0 22px rgba(167,139,250,.30);
+  animation: spin 60s linear infinite;
+}
+@keyframes spin { to { transform: translate(-50%,-50%) rotate(342deg); } }
+.orbit-spark {
+  position: absolute; top: 6%; left: 12%;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #fff; box-shadow: 0 0 12px 3px var(--purple2);
+  animation: twinkle 2.6s ease-in-out infinite alternate;
+}
+
+/* ---------- ondas ---------- */
+.waves { position: fixed; inset: 0; overflow: hidden; pointer-events: none; }
+.wave { position: absolute; left: 0; height: 320px; }
+.wave path { fill: none; stroke-linecap: round; filter: drop-shadow(0 0 8px rgba(139,92,246,.55)); }
+
+/* ---------- topbar ---------- */
+.topbar {
+  position: fixed; top: 18px; right: 24px;
+  display: flex; align-items: center; gap: 22px; z-index: 5;
+}
+.top-link { color: var(--text); text-decoration: none; font-size: 15px; opacity: .92; }
+.top-link:hover { text-decoration: underline; color: #fff; }
+.apps-btn {
+  width: 34px; height: 34px; border: 0; border-radius: 50%;
+  background: transparent; color: var(--muted); cursor: pointer;
+  display: grid; place-items: center; transition: background .2s;
+}
+.apps-btn:hover { background: rgba(255,255,255,.08); color: var(--purple2); }
+.apps-btn svg { width: 22px; height: 22px; }
+.avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  display: grid; place-items: center; font-weight: 700; color: #160a2c;
+  background: linear-gradient(135deg, #c4b5fd, #8b5cf6);
+  box-shadow: 0 0 0 2px rgba(167,139,250,.4); cursor: pointer;
+}
+
+/* ---------- centro ---------- */
+.center {
+  position: relative; z-index: 3;
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 34px; padding-bottom: 40px;
+}
+.logo {
+  font-family: "Product Sans", "Segoe UI", Arial, sans-serif;
+  font-size: 96px; font-weight: 500; letter-spacing: -2px;
+  color: #ffffff;
+  text-shadow: 0 0 40px rgba(167,139,250,.35);
+  animation: logoGlow 6s ease-in-out infinite;
+}
+@keyframes logoGlow {
+  0%,100% { text-shadow: 0 0 32px rgba(167,139,250,.28); }
+  50%     { text-shadow: 0 0 52px rgba(196,181,253,.5); }
+}
+
+/* busca */
+.search {
+  position: relative; display: flex; align-items: center;
+  width: min(640px, 70vw);
+  background: var(--tile);
+  border: 1px solid rgba(167,139,250,.22);
+  border-radius: 999px; padding: 0 18px; height: 60px;
+  backdrop-filter: blur(6px);
+  transition: box-shadow .25s, border-color .25s, background .25s;
+}
+.search:focus-within {
+  border-color: rgba(167,139,250,.6);
+  box-shadow: 0 0 0 4px rgba(139,92,246,.14), 0 8px 40px rgba(139,92,246,.28);
+  background: rgba(38, 30, 58, 0.7);
+}
+.ico-search { width: 22px; height: 22px; color: var(--purple2); flex: none; }
+#searchInput {
+  flex: 1; height: 100%; border: 0; background: transparent;
+  color: var(--text); font-size: 18px; padding: 0 14px; outline: none;
+}
+#searchInput::placeholder { color: var(--muted); }
+.ico-mic { border: 0; background: transparent; cursor: pointer; display: grid; place-items: center; }
+.ico-mic svg { width: 22px; height: 22px; }
+
+/* atalhos */
+.shortcuts {
+  display: flex; gap: 26px; flex-wrap: wrap; justify-content: center; max-width: 760px;
+}
+.shortcut {
+  position: relative; width: 100px;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  text-decoration: none; color: var(--text); font-size: 13px; cursor: pointer;
+}
+.shortcut .tile {
+  width: 62px; height: 62px; border-radius: 50%;
+  background: var(--tile); border: 1px solid rgba(167,139,250,.14);
+  display: grid; place-items: center;
+  transition: transform .2s, box-shadow .2s, background .2s;
+}
+.shortcut:hover .tile {
+  transform: translateY(-4px);
+  background: rgba(48, 38, 70, 0.75);
+  box-shadow: 0 8px 24px rgba(139,92,246,.28);
+}
+.shortcut .tile img { width: 30px; height: 30px; border-radius: 6px; }
+.shortcut .tile.add { font-size: 30px; color: var(--purple2); line-height: 1; }
+.shortcut .label { opacity: .92; white-space: nowrap; }
+.shortcut .remove {
+  position: absolute; top: -4px; right: 14px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(0,0,0,.6); color: #fff; border: 0; cursor: pointer;
+  display: none; align-items: center; justify-content: center; font-size: 14px; line-height: 1;
+}
+.shortcut:hover .remove { display: flex; }

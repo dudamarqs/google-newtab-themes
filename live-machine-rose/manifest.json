@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Live Machine Rosa — Nova Guia",
+  "version": "1.0.0",
+  "description": "Variação feminina do Live Machine: fitas de aurora em rosa/lavanda/dourado fluindo devagar, partículas delicadas, telemetria e terminal central. Parte 5 do pacote Dynamic New Tab.",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.google.com/*",
+        "*://www.google.com.br/*"
+      ],
+      "css": ["google.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

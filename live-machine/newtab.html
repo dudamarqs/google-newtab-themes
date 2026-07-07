@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova guia</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grid" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- malha de dados (rede viva) -->
+  <canvas id="net" aria-hidden="true"></canvas>
+
+  <!-- painéis de telemetria (criados via JS) -->
+  <div class="panel bl" id="panelSys" aria-hidden="true"></div>
+  <div class="panel br" id="panelCluster" aria-hidden="true"></div>
+
+  <!-- barra superior direita -->
+  <header class="topbar">
+    <a href="https://mail.google.com" class="top-link">Gmail</a>
+    <a href="https://www.google.com/imghp" class="top-link">Imagens</a>
+    <button class="apps-btn" id="appsBtn" title="Apps do Google">
+      <svg viewBox="0 0 24 24"><g fill="currentColor">
+        <circle cx="5" cy="5" r="1.6"/><circle cx="12" cy="5" r="1.6"/><circle cx="19" cy="5" r="1.6"/>
+        <circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/>
+        <circle cx="5" cy="19" r="1.6"/><circle cx="12" cy="19" r="1.6"/><circle cx="19" cy="19" r="1.6"/>
+      </g></svg>
+    </button>
+    <div class="avatar" title="Perfil">G</div>
+  </header>
+
+  <!-- conteúdo central -->
+  <main class="center">
+    <h1 class="logo">Google</h1>
+
+    <div class="hud"><span class="spin" id="spin">⠋</span><span id="hudmsg">system ready</span></div>
+
+    <form class="terminal" id="searchForm" autocomplete="off">
+      <span class="tprompt">$</span>
+      <input type="text" id="searchInput" placeholder="Pesquise no Google ou digite um URL" spellcheck="false" />
+      <span class="tstat" id="tstat">idle</span>
+    </form>
+
+    <section class="shortcuts" id="shortcuts"></section>
+  </main>
+
+  <script src="newtab.js"></script>
+</body>
+</html>

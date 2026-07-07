@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "name": "Purple Wave — Tema do Navegador",
+  "description": "Tema dark/roxo para a UI do Chrome (abas, barra de ferramentas, endereço e favoritos). Combina com a extensão Purple Wave — Nova Guia.",
+  "theme": {
+    "colors": {
+      "frame":                    [16, 10, 30],
+      "frame_inactive":           [12, 7, 22],
+      "frame_incognito":          [12, 7, 24],
+      "frame_incognito_inactive": [9, 5, 18],
+
+      "toolbar":                  [24, 17, 44],
+      "toolbar_text":             [236, 233, 245],
+
+      "tab_text":                 [199, 180, 255],
+      "tab_background_text":      [168, 158, 190],
+
+      "omnibox_background":       [20, 13, 38],
+      "omnibox_text":             [236, 233, 245],
+
+      "bookmark_text":            [167, 139, 250],
+
+      "ntp_background":           [10, 7, 20],
+      "ntp_text":                 [236, 233, 245],
+      "ntp_link":                 [167, 139, 250],
+
+      "button_background":        [24, 17, 44]
+    },
+    "tints": {
+      "buttons": [0.72, 0.55, 0.82]
+    },
+    "properties": {
+      "ntp_logo_alternate": 1
+    }
+  }
+}

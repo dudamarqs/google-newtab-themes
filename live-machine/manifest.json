@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Live Machine — Nova Guia",
+  "version": "1.0.0",
+  "description": "O Google como um computador vivo: malha de dados com pacotes trafegando até um núcleo, painéis de telemetria (CPU/QPS/latência) e terminal central. Parte 4 do pacote Dynamic New Tab.",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.google.com/*",
+        "*://www.google.com.br/*"
+      ],
+      "css": ["google.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

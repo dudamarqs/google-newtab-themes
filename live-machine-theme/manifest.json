@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "name": "Live Machine — Tema do Navegador",
+  "description": "Tema neutro/tech (grafite + ciano) para a UI do Chrome. Combina com a extensão Live Machine — Nova Guia.",
+  "theme": {
+    "colors": {
+      "frame":                    [10, 14, 19],
+      "frame_inactive":           [8, 11, 15],
+      "frame_incognito":          [7, 10, 14],
+      "frame_incognito_inactive": [5, 8, 11],
+
+      "toolbar":                  [16, 22, 29],
+      "toolbar_text":             [205, 216, 224],
+
+      "tab_text":                 [143, 230, 240],
+      "tab_background_text":      [150, 165, 178],
+
+      "omnibox_background":       [13, 19, 26],
+      "omnibox_text":             [205, 216, 224],
+
+      "bookmark_text":            [79, 208, 224],
+
+      "ntp_background":           [11, 15, 20],
+      "ntp_text":                 [205, 216, 224],
+      "ntp_link":                 [79, 208, 224],
+
+      "button_background":        [16, 22, 29]
+    },
+    "tints": {
+      "buttons": [0.5, 0.4, 0.82]
+    },
+    "properties": {
+      "ntp_logo_alternate": 1
+    }
+  }
+}

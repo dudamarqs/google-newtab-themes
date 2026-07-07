@@ -1,0 +1,90 @@
+/* ===== Live Machine Rosa — tema rosa/tech para a busca do Google ===== */
+
+:root {
+  --lr-bg:    #0d0710;
+  --lr-tile:  #1a1020;
+  --lr-line:  rgba(255,154,196,.18);
+  --lr-rose:  #ff9ac4;
+  --lr-rose2: #ffc2dd;
+  --lr-text:  #f3e2ec;
+  --lr-muted: #b79aac;
+}
+
+html, body,
+.mw, #main, #cnt, #rcnt, #center_col, #rso, #search, #searchform,
+.sfbg, .minidiv, #appbar, #extabar, #tvcap, #botstuff {
+  background: transparent !important; color: var(--lr-text) !important;
+}
+html, body {
+  background: radial-gradient(1200px 800px at 50% 40%, #241020 0%, #160a15 60%, #0d0710 100%) !important;
+}
+
+.sfbg, .minidiv, #searchform.minidiv, .Yg4bFe, .ykqfyd, .n692Zd {
+  background: rgba(13,7,16,.92) !important; border-color: var(--lr-line) !important; box-shadow: none !important;
+}
+
+/* caixa de pesquisa */
+.RNNXgb, .A8SBwf, form[role=search] .RNNXgb {
+  background: rgba(24,12,20,.9) !important; border: 1px solid var(--lr-line) !important;
+  border-radius: 16px !important; box-shadow: inset 0 0 18px rgba(255,154,196,.05) !important;
+}
+.RNNXgb:focus-within {
+  border-color: rgba(255,154,196,.55) !important;
+  box-shadow: 0 0 0 3px rgba(255,111,176,.12), 0 0 30px rgba(255,111,176,.22) !important;
+}
+input.gLFyf, textarea.gLFyf, input[name=q] {
+  background: transparent !important; color: var(--lr-text) !important; caret-color: var(--lr-rose) !important;
+}
+input.gLFyf::placeholder { color: var(--lr-muted) !important; }
+.RNNXgb svg, .RNNXgb path { fill: var(--lr-rose) !important; }
+
+/* abas / Ferramentas */
+#hdtb, #hdtbMenus, #hdtb-msb, .crJ18e, #hdtbSum { background: transparent !important; border-color: var(--lr-line) !important; box-shadow: none !important; }
+.hdtb-mitem a, #hdtb-msb a, .YmvwI, .NZmxZe, a.nBDE1b, .LatpMc { color: var(--lr-muted) !important; }
+.hdtb-mitem.hdtb-msel, .hdtb-mitem-act, .YmvwI.NZmxZe { color: var(--lr-rose2) !important; border-bottom-color: var(--lr-rose) !important; }
+.mFdA6c, .LHz7ec, .M8OgIe, .lQ3Qwc, .OC1o4d, .YABt3, .cj2Hdd, g-menu, .KTBKoe {
+  background: var(--lr-tile) !important; color: var(--lr-text) !important; border-color: var(--lr-line) !important; box-shadow: 0 8px 26px rgba(0,0,0,.5) !important;
+}
+.mF6Bwd, .cIt9Le, .Lu57id, g-menu-item, .irf0hb { color: var(--lr-text) !important; }
+g-menu-item:hover, .irf0hb:hover { background: rgba(255,154,196,.12) !important; }
+
+/* resultados: sem cartões/contornos */
+#result-stats, .LHJvCe, .fYyStc, .uo4vr { color: var(--lr-muted) !important; }
+.g, .MjjYud, .kvH3mc, .N54PNb, .tF2Cxc, .kp-blk, .ULSxyf, .related-question-pair,
+#rso div[data-hveid], #search div[data-hveid], .hlcw0c, .eKjLze, .Ww4FFb, .vt6azd {
+  background: transparent !important; border: none !important; box-shadow: none !important; border-radius: 0 !important;
+}
+.osrp-blk, .kp-wholepage, .I6TXqe, .g-blk, .mnr-c, .card-section, .cUnQKe, .wDYxhc, .ruhjFe {
+  background: transparent !important; border: none !important; border-radius: 0 !important; box-shadow: none !important;
+}
+h3, .LC20lb, .DKV0Md { color: var(--lr-rose2) !important; }
+a:visited h3, a:visited .LC20lb { color: #e6b6cf !important; }
+a { color: var(--lr-rose2) !important; }
+cite, .iUh30, .tjvcx, .qzEoUe, .dyjrff, .byrV5b, .Vwoesf { color: var(--lr-muted) !important; }
+.VwiC3b, .aCOpRe, .yXK7lf, .MUxGbd, .lyLwlc, span { color: var(--lr-text) !important; }
+.VwiC3b em, .aCOpRe em { color: var(--lr-rose2) !important; font-style: normal !important; }
+.related-question-pair, .cbphWd, .wQiwMc { background: transparent !important; border: none !important; }
+
+#foot, #xjs table, td a.fl { color: var(--lr-rose2) !important; }
+.SJajHc.NVbCr, td .YyVfkd { color: var(--lr-rose2) !important; }
+#footcnt, .Fgvgjc, #fbar, .kFncmc { background: rgba(13,7,16,.9) !important; border-color: var(--lr-line) !important; color: var(--lr-muted) !important; }
+#footcnt a, #fbar a { color: var(--lr-muted) !important; }
+
+* { scrollbar-color: var(--lr-rose) transparent; }
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-thumb { background: rgba(255,154,196,.4); border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* superfície de cartão nos contêineres (mantém imagens = background-image) */
+#rso div, #rhs div, #center_col div, #botstuff div, #rcnt div {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+/* web components de cartão do Google */
+g-inner-card, g-card, g-expandable-container, g-section-with-header, .g-inner-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}

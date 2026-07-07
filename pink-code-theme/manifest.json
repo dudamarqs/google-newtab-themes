@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "name": "Pink Code — Tema do Navegador",
+  "description": "Tema dark/rosa para a UI do Chrome (abas, barra de ferramentas, endereço e favoritos). Combina com a extensão Pink Code — Nova Guia.",
+  "theme": {
+    "colors": {
+      "frame":                    [26, 13, 22],
+      "frame_inactive":           [18, 10, 16],
+      "frame_incognito":          [16, 8, 14],
+      "frame_incognito_inactive": [12, 6, 11],
+
+      "toolbar":                  [27, 20, 28],
+      "toolbar_text":             [233, 228, 234],
+
+      "tab_text":                 [255, 179, 209],
+      "tab_background_text":      [176, 160, 176],
+
+      "omnibox_background":       [20, 14, 21],
+      "omnibox_text":             [233, 228, 234],
+
+      "bookmark_text":            [245, 169, 196],
+
+      "ntp_background":           [12, 10, 13],
+      "ntp_text":                 [233, 228, 234],
+      "ntp_link":                 [245, 169, 196],
+
+      "button_background":        [27, 20, 28]
+    },
+    "tints": {
+      "buttons": [0.94, 0.55, 0.82]
+    },
+    "properties": {
+      "ntp_logo_alternate": 1
+    }
+  }
+}

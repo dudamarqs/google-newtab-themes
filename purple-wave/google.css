@@ -1,0 +1,114 @@
+/* ===== Purple Wave — tema dark/roxo para a busca do Google =====
+   Aplicado em www.google.com / google.com.br. Usa !important porque
+   o Google injeta estilos inline. */
+
+:root {
+  --pw-bg:    #0a0714;
+  --pw-bg2:   #140b26;
+  --pw-tile:  #1a1430;
+  --pw-line:  rgba(167,139,250,.22);
+  --pw-pur:   #8b5cf6;
+  --pw-purs:  #c4b5fd;
+  --pw-text:  #ece9f5;
+  --pw-muted: #b3adc4;
+}
+
+/* ---- base ---- */
+html, body,
+.mw, #main, #cnt, #rcnt, #center_col, #rso, #search, #searchform,
+.sfbg, .minidiv, #appbar, #extabar, #tvcap, #botstuff {
+  background: transparent !important;
+  color: var(--pw-text) !important;
+}
+html, body {
+  background: radial-gradient(1000px 700px at 85% -10%, #1c1140 0%, var(--pw-bg2) 42%, var(--pw-bg) 100%) !important;
+}
+
+/* ---- topo / header ---- */
+.sfbg, .minidiv, #searchform.minidiv, .Yg4bFe, .ykqfyd, .n692Zd {
+  background: rgba(10,7,20,.92) !important;
+  border-color: var(--pw-line) !important;
+  box-shadow: none !important;
+}
+
+/* ---- caixa de pesquisa ---- */
+.RNNXgb, .A8SBwf, form[role=search] .RNNXgb {
+  background: var(--pw-tile) !important;
+  border: 1px solid var(--pw-line) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 4px 22px rgba(139,92,246,.14) !important;
+}
+.RNNXgb:focus-within {
+  border-color: rgba(167,139,250,.6) !important;
+  box-shadow: 0 0 0 3px rgba(139,92,246,.16), 0 8px 30px rgba(139,92,246,.24) !important;
+}
+input.gLFyf, textarea.gLFyf, input[name=q] {
+  background: transparent !important; color: var(--pw-text) !important;
+  caret-color: var(--pw-pur) !important;
+}
+input.gLFyf::placeholder { color: var(--pw-muted) !important; }
+.RNNXgb svg, .RNNXgb path { fill: var(--pw-purs) !important; }
+
+/* ---- abas / Ferramentas ---- */
+#hdtb, #hdtbMenus, #hdtb-msb, .crJ18e, #hdtbSum {
+  background: transparent !important; border-color: var(--pw-line) !important; box-shadow: none !important;
+}
+.hdtb-mitem a, #hdtb-msb a, .YmvwI, .NZmxZe, a.nBDE1b, .LatpMc { color: var(--pw-muted) !important; }
+.hdtb-mitem.hdtb-msel, .hdtb-mitem-act, .YmvwI.NZmxZe {
+  color: var(--pw-purs) !important; border-bottom-color: var(--pw-pur) !important;
+}
+.mFdA6c, .LHz7ec, .M8OgIe, .lQ3Qwc, .OC1o4d, .YABt3, .cj2Hdd, g-menu, .KTBKoe {
+  background: var(--pw-tile) !important; color: var(--pw-text) !important;
+  border-color: var(--pw-line) !important; box-shadow: 0 8px 26px rgba(0,0,0,.55) !important;
+}
+.mF6Bwd, .cIt9Le, .Lu57id, g-menu-item, .irf0hb { color: var(--pw-text) !important; }
+g-menu-item:hover, .irf0hb:hover { background: rgba(167,139,250,.14) !important; }
+
+/* ---- resultados ---- */
+#result-stats, .LHJvCe, .fYyStc, .uo4vr { color: var(--pw-muted) !important; }
+.g, .MjjYud, .kvH3mc, .N54PNb, .tF2Cxc, .kp-blk, .ULSxyf, .related-question-pair,
+#rso div[data-hveid], #search div[data-hveid], .hlcw0c, .eKjLze, .Ww4FFb, .vt6azd {
+  background: transparent !important; border: none !important;
+  box-shadow: none !important; border-radius: 0 !important;
+}
+/* sem cartões/contornos: superfícies transparentes, só o fundo escuro da página */
+.vt6azd, .osrp-blk, .kp-wholepage, .I6TXqe, .g-blk, .mnr-c, .card-section,
+.cUnQKe, .wDYxhc, .ruhjFe, .ULSxyf, [jsname] > .g, .Cx8Sxb, .yG4QQe {
+  background: transparent !important; border: none !important;
+  border-radius: 0 !important; box-shadow: none !important;
+}
+h3, .LC20lb, .DKV0Md { color: var(--pw-purs) !important; }
+a:visited h3, a:visited .LC20lb { color: #b79df0 !important; }
+a { color: var(--pw-purs) !important; }
+cite, .iUh30, .tjvcx, .qzEoUe, .dyjrff, .byrV5b, .Vwoesf { color: var(--pw-muted) !important; }
+.VwiC3b, .aCOpRe, .yXK7lf, .MUxGbd, .lyLwlc, span { color: var(--pw-text) !important; }
+.VwiC3b em, .aCOpRe em { color: var(--pw-purs) !important; font-style: normal !important; }
+.related-question-pair, .cbphWd, .wQiwMc { background: transparent !important; border: none !important; }
+
+/* ---- paginação / rodapé ---- */
+#foot, #xjs table, td a.fl { color: var(--pw-purs) !important; }
+.SJajHc.NVbCr, td .YyVfkd { color: var(--pw-purs) !important; }
+#footcnt, .Fgvgjc, #fbar, .kFncmc {
+  background: rgba(10,7,20,.9) !important; border-color: var(--pw-line) !important; color: var(--pw-muted) !important;
+}
+#footcnt a, #fbar a { color: var(--pw-muted) !important; }
+
+/* ---- scrollbar ---- */
+* { scrollbar-color: var(--pw-pur) transparent; }
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-thumb { background: rgba(167,139,250,.4); border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* superfície de cartão nos contêineres (mantém imagens = background-image) */
+#rso div, #rhs div, #center_col div, #botstuff div, #rcnt div {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+/* web components de cartão do Google */
+g-inner-card, g-card, g-expandable-container, g-section-with-header, .g-inner-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}

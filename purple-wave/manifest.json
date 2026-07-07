@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Purple Wave — Nova Guia",
+  "version": "1.0.0",
+  "description": "Nova guia dark roxa com orbe luminoso e onda em movimento lento. Parte 2 do pacote Dynamic New Tab.",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.google.com/*",
+        "*://www.google.com.br/*"
+      ],
+      "css": ["google.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

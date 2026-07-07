@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Pixel Runner — Nova Guia",
+  "version": "1.0.0",
+  "description": "Nova guia dark preto/azul com robozinho pixel art que corre sobre a barra de pesquisa, pula obstáculos, coleta cubos e sai de um portal. Parte 3 do pacote Dynamic New Tab.",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.google.com/*",
+        "*://www.google.com.br/*"
+      ],
+      "css": ["google.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
