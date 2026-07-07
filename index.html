@@ -97,6 +97,32 @@
     footer .credit a { color: var(--pink); text-decoration: none; font-weight: 700; }
     footer .credit a:hover { text-decoration: underline; }
     footer .small { margin-top: 8px; font-size: 13px; }
+
+    /* lightbox / pop-up */
+    .card .shot { cursor: zoom-in; }
+    .modal { position: fixed; inset: 0; z-index: 100; display: none; }
+    .modal.open { display: grid; place-items: center; padding: 24px; }
+    .modal .backdrop { position: absolute; inset: 0; background: rgba(6,4,10,.82); backdrop-filter: blur(6px); }
+    .modal .dialog {
+      position: relative; z-index: 1; width: min(1120px, 94vw); max-height: 92vh; overflow: auto;
+      background: #120b18; border: 1px solid var(--line); border-radius: 16px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.6); animation: pop .18s ease;
+    }
+    @keyframes pop { from { transform: scale(.96); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .modal .dialog img { width: 100%; display: block; border-radius: 16px 16px 0 0; border-bottom: 1px solid var(--line); }
+    .modal .minfo { padding: 18px 22px 22px; }
+    .modal .minfo h3 { font-size: 22px; display: flex; align-items: center; gap: 10px; }
+    .modal .minfo h3::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+    .modal .minfo p { color: var(--muted); margin: 8px 0 14px; }
+    .modal .mlinks { display: flex; gap: 10px; flex-wrap: wrap; }
+    .modal .mlinks a { text-decoration: none; padding: 9px 16px; border-radius: 9px; border: 1px solid var(--line); font-weight: 600; font-size: 14px; transition: border-color .2s, background .2s; }
+    .modal .mlinks a:hover { border-color: var(--accent); background: rgba(255,255,255,.05); }
+    .modal .close {
+      position: absolute; top: 10px; right: 12px; z-index: 2; width: 38px; height: 38px; border-radius: 50%;
+      border: 1px solid var(--line); background: rgba(0,0,0,.5); color: #fff; font-size: 18px; cursor: pointer;
+      display: grid; place-items: center; transition: background .2s;
+    }
+    .modal .close:hover { background: rgba(0,0,0,.85); }
   </style>
 </head>
 <body>
@@ -144,6 +170,20 @@
     </div>
   </footer>
 
+  <!-- lightbox / pop-up -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Visualização do tema">
+    <div class="backdrop" data-close></div>
+    <div class="dialog" style="--accent:#ffffff">
+      <button class="close" data-close aria-label="Fechar">&#10005;</button>
+      <img id="mImg" src="" alt="" />
+      <div class="minfo">
+        <h3 id="mTitle"></h3>
+        <p id="mDesc"></p>
+        <div class="mlinks" id="mLinks"></div>
+      </div>
+    </div>
+  </div>
+
   <script>
     const REPO = "https://github.com/dudamarqs/google-newtab-themes/tree/main/";
     const themes = [
@@ -168,9 +208,9 @@
         desc: "Variação feminina do Live Machine: fitas de aurora em rosa, lavanda e dourado fluindo suavemente.",
         tags: ["aurora", "feminino", "rosa"] },
     ];
-    document.getElementById("grid").innerHTML = themes.map(t => `
+    document.getElementById("grid").innerHTML = themes.map((t, i) => `
       <article class="card" style="--accent:${t.accent}">
-        <img class="shot" src="${t.img}" alt="Tema ${t.name}" loading="lazy" />
+        <img class="shot" data-i="${i}" src="${t.img}" alt="Tema ${t.name}" loading="lazy" />
         <div class="body">
           <h3>${t.name}</h3>
           <p>${t.desc}</p>
@@ -181,6 +221,31 @@
           </div>
         </div>
       </article>`).join("");
+
+    // lightbox / pop-up
+    const modal = document.getElementById("modal");
+    const dlg = modal.querySelector(".dialog");
+    const mImg = document.getElementById("mImg");
+    const mTitle = document.getElementById("mTitle");
+    const mDesc = document.getElementById("mDesc");
+    const mLinks = document.getElementById("mLinks");
+    function openModal(i) {
+      const t = themes[i];
+      dlg.style.setProperty("--accent", t.accent);
+      mImg.src = t.img; mImg.alt = "Tema " + t.name;
+      mTitle.textContent = t.name; mDesc.textContent = t.desc;
+      mLinks.innerHTML =
+        `<a href="${REPO}${t.slug}" target="_blank" rel="noopener">Ver a extensão</a>` +
+        `<a href="${REPO}${t.slug}-theme" target="_blank" rel="noopener">Ver o tema da UI</a>`;
+      modal.classList.add("open"); document.body.style.overflow = "hidden";
+    }
+    function closeModal() { modal.classList.remove("open"); document.body.style.overflow = ""; }
+    document.getElementById("grid").addEventListener("click", (e) => {
+      const img = e.target.closest(".shot");
+      if (img) openModal(+img.dataset.i);
+    });
+    modal.addEventListener("click", (e) => { if (e.target.hasAttribute("data-close")) closeModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
   </script>
 </body>
 </html>
