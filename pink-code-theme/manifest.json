@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "Pink Code — Tema do Navegador",
   "description": "Tema dark/rosa para a UI do Chrome (abas, barra de ferramentas, endereço e favoritos). Combina com a extensão Pink Code — Nova Guia.",
   "theme": {

@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "Live Machine — Tema do Navegador",
   "description": "Tema neutro/tech (grafite + ciano) para a UI do Chrome. Combina com a extensão Live Machine — Nova Guia.",
   "theme": {

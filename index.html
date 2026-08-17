@@ -91,6 +91,35 @@
     .card .links a { flex: 1; text-align: center; text-decoration: none; font-size: 13px; font-weight: 600; padding: 9px 12px; border-radius: 9px; border: 1px solid var(--line); transition: background .2s, border-color .2s; }
     .card .links a:hover { border-color: var(--accent); background: rgba(255,255,255,.05); }
 
+    /* problemas comuns */
+    .faq { display: grid; gap: 12px; }
+    .faq details {
+      border: 1px solid var(--line); border-radius: 14px; background: var(--card);
+      padding: 0 18px; transition: border-color .2s;
+    }
+    .faq details[open] { border-color: rgba(255,111,176,.4); }
+    .faq summary {
+      cursor: pointer; list-style: none; padding: 16px 0; font-weight: 600; font-size: 15px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::before {
+      content: "+"; color: var(--pink); font: 700 17px "Consolas", monospace;
+      width: 18px; flex: none; text-align: center;
+    }
+    .faq details[open] summary::before { content: "–"; }
+    .faq .ans { padding: 0 0 18px 28px; color: var(--muted); font-size: 14.5px; }
+    .faq .ans p + p { margin-top: 10px; }
+    .faq .ans code {
+      font: 600 13px "Consolas", monospace; color: var(--cyan);
+      background: rgba(255,255,255,.06); border-radius: 5px; padding: 2px 6px;
+    }
+    .faq .ans b { color: var(--text); }
+    .fix {
+      border-left: 3px solid var(--pink); background: rgba(255,111,176,.07);
+      border-radius: 0 9px 9px 0; padding: 12px 14px; margin-top: 12px; font-size: 14px;
+    }
+
     /* rodapé */
     footer { border-top: 1px solid var(--line); margin-top: 50px; padding: 40px 0 60px; text-align: center; color: var(--muted); }
     footer .credit { font-size: 16px; color: var(--text); }
@@ -159,6 +188,55 @@
         <div class="step"><div class="n">02</div><h3>Abra as extensões</h3><p>Vá em <code>chrome://extensions</code> e ative o <b>Modo do desenvolvedor</b>.</p></div>
         <div class="step"><div class="n">03</div><h3>Carregue o tema</h3><p>Clique em <b>Carregar sem compactação</b> e selecione a pasta do tema (ex.: <code>pink-code</code>) e a do tema de UI (<code>pink-code-theme</code>).</p></div>
         <div class="step"><div class="n">04</div><h3>Abra uma nova guia</h3><p>Pronto! Para trocar de tema, ative outro par e desative o anterior.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="problemas">
+    <div class="wrap">
+      <h2>Problemas comuns</h2>
+      <p class="lead">Principalmente: "o tema desabilitou sozinho".</p>
+      <div class="faq">
+        <details open>
+          <summary>O tema da UI voltou ao padrão sozinho</summary>
+          <div class="ans">
+            <p>Na maioria das vezes é um arquivo chamado <code>Cached Theme.pak</code> dentro da
+              pasta <code>*-theme/</code>. Ele é um <b>cache que o próprio Chrome gera</b> ao aplicar
+              o tema — não faz parte do tema. Se esse cache tiver vindo de outra versão do Chrome,
+              o Chrome tenta carregá-lo no lugar do <code>manifest.json</code>, falha e cai no tema
+              padrão, sem exibir erro nenhum.</p>
+            <div class="fix">
+              <b>Como resolver:</b> apague o <code>Cached Theme.pak</code> da pasta do tema e
+              recarregue o tema no <code>chrome://extensions</code> (ícone ↻). Ou baixe o pacote
+              de novo — a partir da <b>versão 1.0.1</b> ele não vai mais junto.
+            </div>
+          </div>
+        </details>
+        <details>
+          <summary>Ativei outro tema e o anterior sumiu da lista</summary>
+          <div class="ans">
+            <p>É o comportamento do Chrome: ele mantém <b>um único tema de UI por vez</b> e, ao
+              aplicar um novo, <b>remove</b> o anterior em vez de apenas desativá-lo. Para voltar,
+              é só carregar a pasta do tema outra vez.</p>
+          </div>
+        </details>
+        <details>
+          <summary>O tema some toda vez que eu abro o Chrome</summary>
+          <div class="ans">
+            <p>Temas carregados sem compactação apontam para o <b>caminho da pasta no disco</b>. Se
+              a pasta foi movida, renomeada ou apagada (por exemplo, se ficou na pasta de
+              Downloads e foi limpa), o Chrome desativa o tema na abertura seguinte. Guarde as
+              pastas num lugar definitivo e mantenha o <b>Modo do desenvolvedor</b> ligado.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Uso a mesma Conta Google em dois computadores</summary>
+          <div class="ans">
+            <p>Temas carregados sem compactação <b>não sincronizam</b> pela conta. Ao entrar na
+              mesma conta em outra máquina, o tema sincronizado de lá pode substituir o que você
+              tinha aplicado localmente.</p>
+          </div>
+        </details>
       </div>
     </div>
   </section>

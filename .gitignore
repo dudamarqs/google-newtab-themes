@@ -11,3 +11,8 @@ desktop.ini
 # Diversos
 *.log
 *.zip
+
+# Gerado pelo Chrome dentro da pasta do tema ao aplicá-lo.
+# NUNCA versionar: o Chrome prefere esse cache ao manifest.json e, se ele vier
+# de outra versão do Chrome, o tema não carrega e volta pro padrão sozinho.
+Cached Theme.pak
